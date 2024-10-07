@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="fullscreen" content="yes" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#000" />
+    <link rel="preconnect" href="https://aicamera.static.camcom.ai" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://aicamera.static.camcom.ai" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="icon" href="https://aicamera.static.camcom.ai/static/favicons/camcom-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://aicamera.static.camcom.ai/static/favicons/camcom-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://aicamera.static.camcom.ai/static/favicons/camcom-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://aicamera.static.camcom.ai/static/favicons/camcom-270x270.png" />
+    <title>AI Camera</title>
+    <link href="/static/css/aicamera.css?version={{version}}" rel="stylesheet" />
+    {% if debug %}
+    <style>
+      .ReactQueryDevtools button {
+        left: 200px!important;
+      }
+    </style>
+    {% endif %}
+  </head>
+  <body class="antialiased h-full">
+    <div id="main" class="h-full bg-white"></div>
+    <!-- Include React and ReactDOM from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js" ></script>
+    <!-- Include Network from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tanstack/react-query@4.36.1/build/umd/index.development.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" ></script>
+    <!-- Include Translation from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/i18next@23.14.0/i18next.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/react-i18next@15.0.1/react-i18next.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.6.1/i18nextHttpBackend.min.js" ></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.0.0/i18nextBrowserLanguageDetector.min.js" ></script>
+    <!-- Include Validation from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/react-hook-form@7.53.0/dist/index.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js" ></script>
+    <!-- Include Local DB from CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js" ></script>
+    <script defer src="/static/js/aicamera/main.iife.js?version={{version}}"></script>
+    {% if dev_level == 1 %}
+      <!-- ?dev=1#/ -->
+      <!-- Development Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+      <script src="https://cdn.jsdelivr.net/npm/eruda-monitor@1.0.2/eruda-monitor.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/eruda-timing@2.0.1/eruda-timing.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/eruda-features@2.1.0/eruda-features.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/eruda-code@2.2.0/eruda-code.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/eruda-outline-plugin@0.0.5/dist/eruda-outline-plugin.min.js"></script>
+      <script>
+        eruda.init();
+        eruda.add(erudaCode)
+        eruda.add(erudaFeatures)
+        eruda.add(erudaMonitor)
+        eruda.add(erudaTiming)
+        eruda.add(erudaOutlinePlugin)
+      </script>
+    {% endif %}
+  </body>
+</html>

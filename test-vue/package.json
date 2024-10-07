@@ -1,0 +1,35 @@
+{
+  "name": "test-vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "js:dev": "chokidar 'src/**/*' -c 'pnpm js:build'",
+    "css:dev": "tailwindcss -i ./src/global.css -o ./dist/css/global.css --watch",
+    "js:build": "vite build",
+    "css:build": "tailwindcss -i ./src/global.css -o ./dist/css/global.css --minify",
+    "dev": "concurrently \"pnpm js:dev\" \"pnpm css:dev\"",
+    "build": "concurrently \"pnpm js:build\" \"pnpm css:build\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^3.3.0",
+    "pinia": "^2.2.2",
+    "pouchdb": "^9.0.0",
+    "vue": "^3.4.38",
+    "vue-i18n": "^9.14.0",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "autoprefixer": "^10.4.20",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  }
+}

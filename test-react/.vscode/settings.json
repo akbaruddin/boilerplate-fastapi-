@@ -1,0 +1,19 @@
+{
+  "cSpell.words": [
+    "aicamera",
+    "eruda",
+    "fastapi",
+    "iife",
+    "languagedetector",
+    "Lngs",
+    "sonner",
+    "tailwindcss",
+    "tanstack",
+    "templating",
+    "vaul",
+    "zustand"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
+}
